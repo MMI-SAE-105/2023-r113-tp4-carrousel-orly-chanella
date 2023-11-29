@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .carrousel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .carrousel_btn {
+            margin: 10px;
+        }
+
+        .carrousel_parent-ecrans {
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+        }
+/*
+        .carrousel_ecran {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+        }
+
+        .caroussel_liste-liens {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }*/
+
+        </style>
     <script src="//unpkg.com/alpinejs" defer></script>
     <title>Document</title>
 </head>
+
 <body>
     <div class="carrousel" x-data="{}">
         <button class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><</button><button class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">></button>
