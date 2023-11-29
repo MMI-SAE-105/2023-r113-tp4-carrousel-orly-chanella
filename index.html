@@ -20,9 +20,9 @@
         .carrousel_parent-ecrans {
             display: flex;
             overflow-x: scroll;
+            width: 100%;
             scroll-behavior: smooth;
             scroll-snap-type: x mandatory;
-            scroll-snap-align: start;
         }
         
         .caroussel_liste-liens {
@@ -32,11 +32,11 @@
             padding: 0;
             margin: 10px 0;
         }
-        /*.carrousel {
+       .carrousel {
   position: relative;
 }
 
-/*
+
         .carrousel_ecran {
             flex: 0 0 100%;
             scroll-snap-align: start;
@@ -86,7 +86,14 @@
 
 <body>
     <div class="carrousel" x-data="{}">
-        <button class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><</button><button class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">></button>
+        <button class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"
+            @click="p= $refs.parent ; p.scrollLeft += p.clientWidth"
+        >
+            &lt;
+        </button>
+        <button class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">
+            >
+        </button>
         <div class="carrousel_parent-ecrans" x-ref="parent">
             <div id="ecran-1" class="carrousel_ecran">
                 <figure>
